@@ -1,0 +1,55 @@
+.home {
+  background-image: url("/assets/img/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    font-family: "Pacifico", cursive;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 1rem 0;
+  }
+
+  &-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: $text-on-primary;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    background-color: $color-primary;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: color-secondary;
+    }
+  }
+}
