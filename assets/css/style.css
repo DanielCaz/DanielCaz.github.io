@@ -44,7 +44,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   padding: 0.5rem 1rem;
-  background-color: #1cceee;
+  background-color: #13b2ce;
   border-radius: 0.5rem;
   cursor: pointer;
 }
@@ -91,7 +91,7 @@ header {
   font-weight: 400;
 }
 .nav-link:hover {
-  color: #1cceee;
+  color: #13b2ce;
 }
 
 .hamburger {
@@ -138,18 +138,8 @@ header {
   color: #fff;
   margin: 1rem 0;
 }
-.home-btn {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0.5rem 1rem;
-  background-color: #1cceee;
-  border-radius: 0.5rem;
-}
-.home-btn:hover {
-  background-color: color-secondary;
+.home .btn {
+  margin-right: 1em;
 }
 
 .about {
@@ -223,7 +213,7 @@ header {
 }
 .contact-input:focus {
   outline: none;
-  border-color: #1cceee;
+  border-color: #13b2ce;
 }
 .contact-textarea {
   padding: 0.5rem 1rem;
@@ -235,7 +225,7 @@ header {
 }
 .contact-textarea:focus {
   outline: none;
-  border-color: #1cceee;
+  border-color: #13b2ce;
 }
 
 footer {
@@ -256,7 +246,7 @@ footer-link {
   font-weight: 400;
 }
 footer-link:hover {
-  color: #1cceee;
+  color: #13b2ce;
 }
 
 @media screen and (max-width: 768px) {
