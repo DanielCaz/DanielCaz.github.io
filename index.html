@@ -10,7 +10,7 @@
       name="description"
       content="Hi, I'm Daniel Cazarez. A full-stack developer, passionate about technology and programming."
     />
-    <meta name="keywords" content="daniel, cazarez, portfolio, jorge">
+    <meta name="keywords" content="daniel, cazarez, portfolio, jorge" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -35,6 +35,13 @@
     <meta
       name="description"
       content="Hi, I'm Daniel Cazarez. A full-stack developer, passionate about technology and programming."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
@@ -72,7 +79,10 @@
             A full-stack developer, passionate about technology and programming.
           </p>
           <a href="#about-me" class="btn">Learn More</a>
-          <a href="/assets/pdf/Resume_EN.pdf" class="btn" download="DanielCazarez"
+          <a
+            href="/assets/pdf/Resume_EN.pdf"
+            class="btn"
+            download="DanielCazarez"
             >Download Resume</a
           >
         </div>
@@ -81,15 +91,15 @@
         <div class="content">
           <h2 class="title">About Me</h2>
           <p class="text">
-            I am a full-stack developer, passionate about technology and programming. 
-            I like to learn new things and I consider myself a very responsible and 
-            committed person with my projects.
+            I am a full-stack developer, passionate about technology and
+            programming. I like to learn new things and I consider myself a very
+            responsible and committed person with my projects.
 
             <br /><br />
 
-            I am currently majoring in Computer Systems Engineering and minoring in
-            Full-Stack Development at the Instituto Tecnológico de Estudios Superiores
-            de Zamora.
+            I am currently majoring in Computer Systems Engineering and minoring
+            in Full-Stack Development at the Instituto Tecnológico de Estudios
+            Superiores de Zamora.
           </p>
           <a href="#projects" class="btn">See Projects</a>
         </div>
@@ -101,16 +111,16 @@
             <div class="projects-card">
               <img
                 src="/assets/img/p1.png"
-                alt="Proyecto 1"
+                alt="Project 1"
                 class="projects-img"
               />
               <h3 class="projects-name">
                 Patient Management System for Dental Offices
               </h3>
               <p class="projects-description">
-                Patient management software for dental offices developed 
-                in NextJS with Bootstrap for the frontend, firebase for the 
-                backend and a custom API for two-factor authentication.
+                Patient management software for dental offices developed in
+                NextJS with Bootstrap for the frontend, firebase for the backend
+                and a custom API for two-factor authentication.
               </p>
               <a href="https://sgcd.vercel.app/" class="btn" target="_blank"
                 >Visit</a
@@ -120,15 +130,14 @@
             <div class="projects-card">
               <img
                 src="/assets/img/p2.png"
-                alt="Proyecto 2"
+                alt="Project 2"
                 class="projects-img"
               />
               <h3 class="projects-name">AI Checkers</h3>
               <p class="projects-description">
-                A simple checkers game with a not-so-intelligent 
-                AI that I made for my AI class. It's written in 
-                NextJS with Bootstrap for the layout and a best-first 
-                search algorithm for the AI.
+                A simple checkers game with a not-so-intelligent AI that I made
+                for my AI class. It's written in NextJS with Bootstrap for the
+                layout and a best-first search algorithm for the AI.
               </p>
               <a
                 href="https://checkers-zeta.vercel.app/"
@@ -146,15 +155,15 @@
             <div class="projects-card">
               <img
                 src="/assets/img/p3.png"
-                alt="Proyecto 3"
+                alt="Project 3"
                 class="projects-img"
               />
               <h3 class="projects-name">Travel Planner</h3>
               <p class="projects-description">
-                Mobile application developed in flutter and 
-                with firebase as backend. Allows users to create 
-                trips and share them with other users. Stores trip 
-                information such as activities, expenses, transportation, lodging, etc.
+                Mobile application developed in flutter and with firebase as
+                backend. Allows users to create trips and share them with other
+                users. Stores trip information such as activities, expenses,
+                transportation, lodging, etc.
               </p>
               <a
                 href="https://danidandev-travel-planner.netlify.app/"
@@ -163,12 +172,53 @@
                 >Download App</a
               >
             </div>
+            <div class="projects-card">
+              <img
+                src="/assets/img/p4.png"
+                alt="Project 4"
+                class="projects-img"
+              />
+              <h3 class="projects-name">Pokemon Type Compare</h3>
+              <p class="projects-description">
+                A simple web application that compares the strengths and
+                weaknesses of two pokemon types. It was developed in Angular
+                with Bootstrap for the layout and the PokeAPI for the data.
+              </p>
+              <a
+                href="https://pokemon-type-compare.netlify.app/"
+                class="btn"
+                target="_blank"
+                >Visit</a
+              >
+              <a
+                href="https://github.com/DanielCaz/pokemon-type-compare"
+                class="btn"
+                target="_blank"
+                >View repository</a
+              >
+            </div>
           </div>
         </div>
       </section>
       <section class="contact" id="contact">
         <div class="content">
           <h2 class="title">Contact</h2>
+          <p class="text">
+            If you want to contact me, you can do it through the following
+            platforms:
+          </p>
+          <div class="contact-container">
+            <a
+              href="https://www.linkedin.com/in/jorge-daniel-cazarez-hernandez/"
+              class="contact-item"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/DanielCaz/" class="contact-item">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <p class="text">Or you can send me a message through this form:</p>
           <form
             method="POST"
             action="https://formspree.io/f/mayzwolp"

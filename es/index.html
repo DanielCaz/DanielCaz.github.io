@@ -10,7 +10,7 @@
       name="description"
       content="Hola, soy Daniel Cazarez. Un desarrollador full-stack, apasionado por la tecnología y la programación."
     />
-    <meta name="keywords" content="jorge, daniel, cazarez, portafolio">
+    <meta name="keywords" content="jorge, daniel, cazarez, portafolio" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -35,6 +35,13 @@
     <meta
       name="description"
       content="Hola, soy Daniel Cazarez. Un desarrollador full-stack, apasionado por la tecnología y la programación"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
   </head>
   <body>
@@ -73,7 +80,10 @@
             programación.
           </p>
           <a href="#sobre-mi" class="btn">Saber más</a>
-          <a href="/assets/pdf/Resume_ES.pdf" class="btn" download="DanielCazarez"
+          <a
+            href="/assets/pdf/Resume_ES.pdf"
+            class="btn"
+            download="DanielCazarez"
             >Descargar CV</a
           >
         </div>
@@ -163,12 +173,53 @@
                 >Descargar app</a
               >
             </div>
+            <div class="projects-card">
+              <img
+                src="/assets/img/p4.png"
+                alt="Project 4"
+                class="projects-img"
+              />
+              <h3 class="projects-name">Comparador de tipos pokemon</h3>
+              <p class="projects-description">
+                Una sencilla aplicación web que compara los puntos fuertes y
+                debilidades de dos tipos de pokemon. Fue desarrollada en Angular
+                con Bootstrap para el diseño y la PokeAPI para los datos.
+              </p>
+              <a
+                href="https://pokemon-type-compare.netlify.app/"
+                class="btn"
+                target="_blank"
+                >Visit</a
+              >
+              <a
+                href="https://github.com/DanielCaz/pokemon-type-compare"
+                class="btn"
+                target="_blank"
+                >View repository</a
+              >
+            </div>
           </div>
         </div>
       </section>
       <section class="contact" id="contacto">
         <div class="content">
           <h2 class="title">Contacto</h2>
+          <p class="text">
+            Si quieres contactarme, puedes hacerlo a través de mis redes
+            sociales:
+          </p>
+          <div class="contact-container">
+            <a
+              href="https://www.linkedin.com/in/jorge-daniel-cazarez-hernandez/"
+              class="contact-item"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/DanielCaz/" class="contact-item">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <p class="text">O puedes enviarme un mensaje:</p>
           <form
             method="POST"
             action="https://formspree.io/f/mayzwolp"

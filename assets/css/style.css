@@ -227,6 +227,29 @@ header {
   outline: none;
   border-color: #13b2ce;
 }
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  margin: 10px;
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+.contact-item:hover {
+  background-color: #000;
+  color: #fff;
+}
 
 footer {
   background-color: #11111a;
