@@ -1,0 +1,35 @@
+---
+import ProjectCard, { Project } from "./ProjectCard.astro";
+
+export interface Props {
+  id: string;
+  title: string;
+  projects: Project[];
+}
+
+const { id, title, projects } = Astro.props;
+---
+
+<section class="projects" id={id}>
+  <div class="content">
+    <h2 class="title">{title}</h2>
+    <div class="projects-container">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .projects {
+    background-color: $color-tertiary;
+    padding: 2rem 0;
+
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 1rem;
+    }
+  }
+</style>

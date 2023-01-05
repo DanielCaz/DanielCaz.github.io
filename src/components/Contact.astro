@@ -1,0 +1,154 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  text1: string;
+  text2: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
+  btnText: string;
+}
+
+const {
+  id,
+  title,
+  text1,
+  text2,
+  namePlaceholder,
+  emailPlaceholder,
+  messagePlaceholder,
+  btnText,
+} = Astro.props;
+---
+
+<section class="contact" id={id}>
+  <div class="content">
+    <h2 class="title">{title}</h2>
+    <p class="text">{text1}</p>
+    <div class="contact-container">
+      <a
+        href="https://www.linkedin.com/in/jorge-daniel-cazarez-hernandez/"
+        class="contact-item"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/DanielCaz/" class="contact-item">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <p class="text">{text2}</p>
+    <form
+      method="POST"
+      action="https://formspree.io/f/mayzwolp"
+      class="contact-form"
+    >
+      <input
+        type="text"
+        placeholder={namePlaceholder}
+        class="contact-input"
+        required
+        name="nombre"
+      />
+      <input
+        type="email"
+        placeholder={emailPlaceholder}
+        class="contact-input"
+        required
+        name="correo"
+      />
+      <textarea
+        name="mensaje"
+        cols="30"
+        rows="10"
+        placeholder={messagePlaceholder}
+        class="contact-input"
+        required></textarea>
+      <input type="submit" value={btnText} class="btn" />
+    </form>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../styles/variables.scss";
+
+  .contact {
+    background-color: $color-secondary;
+    padding: 2rem 0;
+    text-align: center;
+
+    &-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    &-title {
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    &-input {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    &-input:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+
+    &-textarea {
+      padding: 0.5rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    &-textarea:focus {
+      outline: none;
+      border-color: $color-primary;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      color: #000;
+      margin: 10px;
+      font-size: 1.5rem;
+      transition: 0.5s;
+    }
+
+    &-item:hover {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+</style>

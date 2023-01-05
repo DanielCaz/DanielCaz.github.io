@@ -1,0 +1,172 @@
+---
+import About from "./About.astro";
+import Contact from "./Contact.astro";
+import Header from "./Header.astro";
+import Home from "./Home.astro";
+import Projects from "./Projects.astro";
+
+export interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+---
+
+<main>
+  <Header
+    navItems={language === "en"
+      ? [
+          { name: "Home", link: "#home" },
+          { name: "About Me", link: "#about" },
+          { name: "Projects", link: "#projects" },
+          { name: "Contact", link: "#contact" },
+        ]
+      : [
+          { name: "Inicio", link: "#inicio" },
+          { name: "Sobre Mi", link: "#sobre-mi" },
+          { name: "Proyectos", link: "#proyectos" },
+          { name: "Contacto", link: "#contacto" },
+        ]}
+  />
+
+  <Home
+    id={language === "en" ? "home" : "inicio"}
+    title={language === "en"
+      ? "Hi, I'm Daniel Cazarez"
+      : "Hola, soy Daniel Cazarez"}
+    text={language === "en"
+      ? "A full-stack developer, passionate about technology and programming."
+      : "Desarrollador full-stack, apasionado por la tecnología y la programación."}
+    aText={language === "en" ? "Learn More" : "Aprende Más"}
+    btnText={language === "en" ? "Download Resume" : "Descargar CV"}
+    file={language === "en" ? "Resume_EN.pdf" : "Resume_ES.pdf"}
+  />
+
+  <About
+    id={language === "en" ? "about" : "sobre-mi"}
+    title={language === "en" ? "About Me" : "Sobre Mi"}
+    text1={language === "en"
+      ? "I am a full-stack developer, passionate about technology and programming. I like to learn new things and I consider myself a very responsible and committed person with my projects."
+      : "Soy un desarrollador full-stack, apasionado por la tecnología y la programación. Me gusta aprender cosas nuevas y me considero una persona muy responsable y comprometida con mis proyectos."}
+    text2={language === "en"
+      ? "I am currently majoring in Computer Systems Engineering and minoring in Full-Stack Development at the Instituto Tecnológico de Estudios Superiores de Zamora."
+      : "Actualmente estoy cursando la carrera de Ingeniería en Sistemas Computacionales y la especialidad de Desarrollo Full-Stack en el Instituto Tecnológico de Estudios Superiores de Zamora."}
+    projectsID={language === "en" ? "#projects" : "#proyectos"}
+    btnText={language === "en" ? "See projects" : "Ver proyectos"}
+  />
+
+  <Projects
+    id={language === "en" ? "projects" : "proyectos"}
+    title={language === "en" ? "Projects" : "Proyectos"}
+    projects={language === "en"
+      ? [
+          {
+            name: "Patient Management System for Dental Offices",
+            description:
+              "Patient management software for dental offices developed in Next.js with Bootstrap for the frontend, firebase for the backend and a custom API for two-factor authentication.",
+            image: "p1",
+            buttons: [{ text: "Visit", link: "https://sgcd.vercel.app/" }],
+          },
+          {
+            name: "AI Checkers",
+            description:
+              "A simple checkers game with a not-so-intelligent AI that I made for my AI class. It's developed in Next.js with Bootstrap for the layout and a best-first search algorithm for the AI.",
+            image: "p2",
+            buttons: [
+              { text: "Visit", link: "https://checkers-zeta.vercel.app/" },
+              { text: "Code", link: "https://github.com/DanielCaz/checkers" },
+            ],
+          },
+          {
+            name: "Travel Planner",
+            description:
+              "Mobile application developed in flutter and with firebase as backend. Allows users to create trips and share them with other users. Stores trip information such as activities, expenses, transportation, lodging, etc.",
+            image: "p3",
+            buttons: [
+              {
+                text: "Download App",
+                link: "https://danidandev-travel-planner.netlify.app/",
+              },
+            ],
+          },
+          {
+            name: "Pokemon Type Compare",
+            description:
+              "A simple web application that compares the strengths and weaknesses of two pokemon types. It was developed in Angular with Bootstrap for the layout and the PokeAPI for the data.",
+            image: "p4",
+            buttons: [
+              {
+                text: "Visit",
+                link: "https://pokemon-type-compare.netlify.app/",
+              },
+              {
+                text: "Code",
+                link: "https://github.com/DanielCaz/pokemon-type-compare",
+              },
+            ],
+          },
+        ]
+      : [
+          {
+            name: "Sistema de Gestión de Consultorios Dentales",
+            description:
+              "Software de gestión de pacientes para consultorios dentales desarrollado en Next.js con Bootstrap para el frontend, firebase para el backend y una API personalizada para la autenticación de dos factores.",
+            image: "p1",
+            buttons: [{ text: "Visitar", link: "https://sgcd.vercel.app/" }],
+          },
+          {
+            name: "Ajedrez IA",
+            description:
+              "Un simple juego de ajedrez con una IA no tan inteligente que hice para mi clase de IA. Está desarrollado en Next.js con Bootstrap para el layout y un algoritmo de búsqueda best-first para la IA.",
+            image: "p2",
+            buttons: [
+              { text: "Visitar", link: "https://checkers-zeta.vercel.app/" },
+              { text: "Código", link: "https://github.com/DanielCaz/checkers" },
+            ],
+          },
+          {
+            name: "Planificador de Viajes",
+            description:
+              "Aplicación móvil desarrollada en flutter y con firebase como backend. Permite a los usuarios crear viajes y compartirlos con otros usuarios. Almacena información del viaje como actividades, gastos, transporte, hospedaje, etc.",
+            image: "p3",
+            buttons: [
+              {
+                text: "Descargar App",
+                link: "https://danidandev-travel-planner.netlify.app/",
+              },
+            ],
+          },
+          {
+            name: "Comparador de Tipos de Pokemon",
+            description:
+              "Una simple aplicación web que compara las fortalezas y debilidades de dos tipos de pokemon. Fue desarrollada en Angular con Bootstrap para el layout y la PokeAPI para los datos.",
+            image: "p4",
+            buttons: [
+              {
+                text: "Visitar",
+                link: "https://pokemon-type-compare.netlify.app/",
+              },
+              {
+                text: "Código",
+                link: "https://github.com/DanielCaz/pokemon-type-compare",
+              },
+            ],
+          },
+        ]}
+  />
+
+  <Contact
+    id={language === "en" ? "contact" : "contacto"}
+    title={language === "en" ? "Contact" : "Contacto"}
+    text1={language === "en"
+      ? "If you want to contact me, you can do it through the following social networks:"
+      : "Si quieres contactarme, puedes hacerlo a través de las siguientes redes sociales:"}
+    text2={language === "en"
+      ? "Or you can send me a message through this form:"
+      : "O puedes enviarme un mensaje a través de este formulario:"}
+    namePlaceholder={language === "en" ? "Name" : "Nombre"}
+    emailPlaceholder={language === "en" ? "Email" : "Correo electrónico"}
+    messagePlaceholder={language === "en" ? "Message" : "Mensaje"}
+    btnText={language === "en" ? "Send" : "Enviar"}
+  />
+</main>

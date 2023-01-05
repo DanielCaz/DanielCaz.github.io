@@ -1,0 +1,59 @@
+---
+import Footer from "../components/Footer.astro";
+import "../styles/global.scss";
+
+export interface Props {
+  language: string;
+}
+
+const { language } = Astro.props;
+
+const ogUrl =
+  language === "en" ? "https://danielcaz.me/" : "https://danielcaz.me/es/";
+const ogDescription =
+  language === "en"
+    ? "Hi, I'm Daniel Cazarez. A full-stack developer, passionate about technology and programming."
+    : "Hola, soy Daniel Cazarez. Un desarrollador full-stack, apasionado por la tecnología y la programación.";
+---
+
+<!DOCTYPE html>
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DanielCaz Portfolio</title>
+    <meta name="description" content={ogDescription} />
+    <meta name="keywords" content="daniel, cazarez, portfolio, jorge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:title" content="Daniel Cazarez" />
+    <meta
+      property="og:image"
+      content="https://danielcaz.me/assets/img/logo-og.png"
+    />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="image"
+      content="https://danielcaz.me/assets/img/logo-og.png"
+    />
+    <meta name="description" content={ogDescription} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerPolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <slot />
+    <Footer />
+  </body>
+</html>
