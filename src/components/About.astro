@@ -1,25 +1,15 @@
----
-export interface Props {
-  id: string;
-  title: string;
-  text1: string;
-  text2: string;
-  projectsID: string;
-  btnText: string;
-}
-
-const { id, title, text1, text2, projectsID, btnText } = Astro.props;
----
-
-<section class="about" id={id}>
+<section class="about" id="about">
   <div class="content">
-    <h2 class="title">{title}</h2>
+    <h2 class="title">About Me</h2>
     <p class="text">
-      {text1}
+      I am a full-stack developer, passionate about technology and programming.
+      I like to learn new things and I consider myself a very responsible and
+      committed person with my projects.
       <br /><br />
-      {text2}
+      I am currently majoring in Computer Systems Engineering and minoring in Full-Stack
+      Development at the Instituto Tecnológico de Estudios Superiores de Zamora.
     </p>
-    <a href={projectsID} class="btn">{btnText}</a>
+    <a href="#projects" class="btn">Se projects</a>
   </div>
 </section>
 

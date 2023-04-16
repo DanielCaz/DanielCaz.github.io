@@ -1,14 +1,15 @@
 ---
-export interface Props {
-  navItems: ListItem[];
-}
-
-export interface ListItem {
+interface ListItem {
   name: string;
   link: string;
 }
 
-const { navItems } = Astro.props;
+const navItems: ListItem[] = [
+  { name: "Home", link: "#home" },
+  { name: "About Me", link: "#about" },
+  { name: "Projects", link: "#projects" },
+  { name: "Contact", link: "#contact" },
+];
 ---
 
 <header>

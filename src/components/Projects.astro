@@ -1,18 +1,78 @@
 ---
 import ProjectCard, { Project } from "./ProjectCard.astro";
 
-export interface Props {
-  id: string;
-  title: string;
-  projects: Project[];
-}
-
-const { id, title, projects } = Astro.props;
+const projects: Project[] = [
+  {
+    name: "Patient Management System for Dental Offices",
+    description:
+      "Patient management software for dental offices developed in Next.js with Bootstrap for the frontend, firebase for the backend and a custom API for two-factor authentication.",
+    image: "p1",
+    buttons: [{ text: "Visit", link: "https://sgcd.vercel.app/" }],
+  },
+  {
+    name: "AI Checkers",
+    description:
+      "A simple checkers game with a not-so-intelligent AI that I made for my AI class. It's developed in Next.js with Bootstrap for the layout and a best-first search algorithm for the AI.",
+    image: "p2",
+    buttons: [
+      { text: "Visit", link: "https://checkers-zeta.vercel.app/" },
+      { text: "Code", link: "https://github.com/DanielCaz/checkers" },
+    ],
+  },
+  {
+    name: "Gym Routine Planner",
+    description:
+      "A simple flutter app to plan your gym routine for the week. Uses firebase for auth and database.",
+    image: "p3",
+    buttons: [
+      {
+        text: "Download App",
+        link: "https://github.com/DanielCaz/gym_routine_planner/releases",
+      },
+      {
+        text: "Code",
+        link: "https://github.com/DanielCaz/gym_routine_planner/",
+      },
+    ],
+  },
+  {
+    name: "Pokemon Type Compare",
+    description:
+      "A simple web application that compares the strengths and weaknesses of two pokemon types. It was developed in Angular with Bootstrap for the layout and the PokeAPI for the data.",
+    image: "p4",
+    buttons: [
+      {
+        text: "Visit",
+        link: "https://pokemon-type-compare.netlify.app/",
+      },
+      {
+        text: "Code",
+        link: "https://github.com/DanielCaz/pokemon-type-compare",
+      },
+    ],
+  },
+  {
+    name: "School Agenda",
+    description:
+      "A web application that allows students of my career and semester to see their class schedule. It was developed in Next.js with Tailwind for the layout and MongoDB for the backend with JsonWebToken for auth. It also includes an admin screen to modify the schedule.",
+    image: "p5",
+    buttons: [
+      {
+        text: "Visit",
+        link: "https://horarios-isc.vercel.app/",
+      },
+      {
+        text: "Code",
+        link: "https://github.com/DanielCaz/school-agenda",
+      },
+    ],
+  },
+];
 ---
 
-<section class="projects" id={id}>
+<section class="projects" id="projects">
   <div class="content">
-    <h2 class="title">{title}</h2>
+    <h2 class="title">Projects</h2>
     <div class="projects-container">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>

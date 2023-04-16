@@ -1,31 +1,7 @@
----
-export interface Props {
-  id: string;
-  title: string;
-  text1: string;
-  text2: string;
-  namePlaceholder: string;
-  emailPlaceholder: string;
-  messagePlaceholder: string;
-  btnText: string;
-}
-
-const {
-  id,
-  title,
-  text1,
-  text2,
-  namePlaceholder,
-  emailPlaceholder,
-  messagePlaceholder,
-  btnText,
-} = Astro.props;
----
-
-<section class="contact" id={id}>
+<section class="contact" id="contact">
   <div class="content">
-    <h2 class="title">{title}</h2>
-    <p class="text">{text1}</p>
+    <h2 class="title">Contact</h2>
+    <p class="text">You can find me on:</p>
     <div class="contact-container">
       <a
         href="https://www.linkedin.com/in/jorge-daniel-cazarez-hernandez/"
@@ -37,7 +13,7 @@ const {
         <i class="fab fa-github"></i>
       </a>
     </div>
-    <p class="text">{text2}</p>
+    <p class="text">Or you can send me a message through this form:</p>
     <form
       method="POST"
       action="https://formspree.io/f/mayzwolp"
@@ -45,14 +21,14 @@ const {
     >
       <input
         type="text"
-        placeholder={namePlaceholder}
+        placeholder="Name"
         class="contact-input"
         required
         name="nombre"
       />
       <input
         type="email"
-        placeholder={emailPlaceholder}
+        placeholder="Email"
         class="contact-input"
         required
         name="correo"
@@ -61,10 +37,10 @@ const {
         name="mensaje"
         cols="30"
         rows="10"
-        placeholder={messagePlaceholder}
+        placeholder="Message"
         class="contact-input"
         required></textarea>
-      <input type="submit" value={btnText} class="btn" />
+      <input type="submit" value="Send" class="btn" />
     </form>
   </div>
 </section>
