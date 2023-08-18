@@ -15,7 +15,7 @@ const { project } = Astro.props as { project: ProjectItem };
         alt={project.title}
       />
     </button>
-    <h3 class="text-lg font-semibold">SGCD</h3>
+    <h3 class="text-lg font-semibold">{project.title}</h3>
     <p class="text-center">{project.description}</p>
     <div class="flex gap-2 flex-wrap">
       {

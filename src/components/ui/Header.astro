@@ -1,5 +1,5 @@
 ---
-import pdfResume from '../../assets/pdf/resume.pdf'
+import pdfResume from "../../assets/pdf/resume.pdf";
 
 type NavItem = {
   name: string;
@@ -13,19 +13,38 @@ const navItems: NavItem[] = [
 ];
 ---
 
-<header class="flex items-center justify-between pt-4">
+<header
+  class="flex items-center justify-between pt-4 sticky top-0 left-0 w-full bg-black/30 backdrop-blur"
+>
   <a
     href={pdfResume}
     download="JorgeDanielResume.pdf"
     class="border-4 py-2 px-4 rounded-xl border-white hover:bg-cyan-500 transition-colors duration-300 ease-in-out"
     >Download CV</a
   >
-  <nav class="space-x-6">
+  <button id="btnMenu" class="space-y-2 z-10 sm:hidden p-2">
+    <span
+      id="line1"
+      class="bg-white h-[0.15rem] w-6 block transition-transform duration-300 ease-in-out"
+    ></span>
+    <span
+      id="line2"
+      class="bg-white h-[0.15rem] w-6 block transition-opacity duration-300 ease-in-out"
+    ></span>
+    <span
+      id="line3"
+      class="bg-white h-[0.15rem] w-6 block transition-transform duration-300 ease-in-out"
+    ></span>
+  </button>
+  <nav
+    id="nav"
+    class="absolute sm:static flex flex-col justify-evenly items-center left-0 w-0 top-0 h-[100dvh] bg-black transition-all duration-300 ease-in-out sm:flex-row sm:w-auto sm:h-auto sm:bg-transparent sm:space-x-16"
+  >
     {
       navItems.map((navItem) => (
         <a
           href={navItem.href}
-          class="hover:text-cyan-400 transition-colors duration-300 ease-in-out"
+          class="navLink hover:text-cyan-400 transition-all duration-300 ease-in-out block text-lg opacity-0 -translate-x-full sm:opacity-100 sm:translate-x-0"
         >
           {navItem.name}
         </a>
@@ -33,3 +52,38 @@ const navItems: NavItem[] = [
     }
   </nav>
 </header>
+<script>
+  const html = document.querySelector("html") as HTMLHtmlElement;
+  const btnMenu = document.querySelector("#btnMenu") as HTMLButtonElement;
+  const line1 = document.querySelector("#line1") as HTMLSpanElement;
+  const line2 = document.querySelector("#line2") as HTMLSpanElement;
+  const line3 = document.querySelector("#line3") as HTMLSpanElement;
+  const nav = document.querySelector("#nav") as HTMLDivElement;
+  const navLinks = document.querySelectorAll(
+    ".navLink"
+  ) as NodeListOf<HTMLAnchorElement>;
+
+  const toggleMenu = () => {
+    if (window.innerWidth > 640) return;
+
+    html.classList.toggle("overflow-hidden");
+    line1.classList.toggle("rotate-45");
+    line1.classList.toggle("translate-y-1.5");
+    line2.classList.toggle("opacity-0");
+    line3.classList.toggle("-rotate-45");
+    line3.classList.toggle("-translate-y-1.5");
+    nav.classList.toggle("w-0");
+    nav.classList.toggle("w-full");
+    navLinks.forEach((navLink) => {
+      navLink.classList.toggle("opacity-0");
+      navLink.classList.toggle("-translate-x-full");
+      navLink.classList.toggle("opacity-100");
+    });
+  };
+
+  navLinks.forEach((navLink) =>
+    navLink.addEventListener("click", () => toggleMenu())
+  );
+
+  btnMenu.addEventListener("click", () => toggleMenu());
+</script>

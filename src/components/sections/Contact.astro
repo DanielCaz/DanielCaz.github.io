@@ -28,12 +28,18 @@ const socialLinks: SocialLink[] = [
     <div class="flex m-auto gap-5">
       {
         socialLinks.map((socialLink) => (
-          <a href={socialLink.url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={socialLink.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-cyan-500 group"
+          >
             <Icon
               pack="ion"
               name={socialLink.icon}
-              class="w-8 aspect-square hover:scale-110 hover:text-cyan-500"
+              class="w-8 aspect-square group-hover:scale-110"
             />
+            <span class="group-hover:underline">{socialLink.name}</span>
           </a>
         ))
       }
