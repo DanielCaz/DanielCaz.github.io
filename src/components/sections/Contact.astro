@@ -1,44 +1,82 @@
-<section class="gap-4 my-8 w-96 mx-auto" id="contact">
+---
+import { Icon } from "astro-icon";
+
+type SocialLink = {
+  name: string;
+  url: string;
+  icon: string;
+};
+
+const socialLinks: SocialLink[] = [
+  {
+    name: "GitHub",
+    url: "https://github.com/DanielCaz/",
+    icon: "logo-github",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/jorge-daniel-cazarez-hernandez/",
+    icon: "logo-linkedin",
+  },
+];
+---
+
+<section class="gap-4 my-8 mx-auto" id="contact">
   <h2 class="text-2xl text-center mb-1">Contact</h2>
   <p class="h-1 w-8 bg-white mx-auto"></p>
-  <form
-    method="POST"
-    action="https://formspree.io/f/mayzwolp"
-    class="space-y-3 mt-5"
-  >
-    <div class="grid">
-      <label for="name" class="text-gray-300">Name</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        required=""
-        class="text-white bg-gray-800 p-2 rounded-md"
-      />
+  <div class="grid sm:grid-cols-2 gap-4 mt-6">
+    <div class="flex m-auto gap-5">
+      {
+        socialLinks.map((socialLink) => (
+          <a href={socialLink.url} target="_blank" rel="noopener noreferrer">
+            <Icon
+              pack="ion"
+              name={socialLink.icon}
+              class="w-8 aspect-square hover:scale-110 hover:text-cyan-500"
+            />
+          </a>
+        ))
+      }
     </div>
-    <div class="grid">
-      <label for="email" class="text-gray-300">Email</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        required=""
-        class="text-white bg-gray-800 p-2 rounded-md"
-      />
-    </div>
-    <div class="grid">
-      <label for="message" class="text-gray-300">Message</label>
-      <textarea
-        name="message"
-        id="message"
-        required=""
-        class="text-white bg-gray-800 p-2 rounded-md"></textarea>
-    </div>
-    <button
-      type="submit"
-      class="bg-gray-800 text-white p-2 rounded-md hover:bg-gray-700 w-full"
+    <form
+      method="POST"
+      action="https://formspree.io/f/mayzwolp"
+      class="space-y-3 w-96 mx-auto"
     >
-      Send
-    </button>
-  </form>
+      <div class="grid">
+        <label for="name" class="text-gray-300">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required=""
+          class="text-white bg-gray-800 p-2 rounded-md"
+        />
+      </div>
+      <div class="grid">
+        <label for="email" class="text-gray-300">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required=""
+          class="text-white bg-gray-800 p-2 rounded-md"
+        />
+      </div>
+      <div class="grid">
+        <label for="message" class="text-gray-300">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          required=""
+          class="text-white bg-gray-800 p-2 rounded-md"></textarea>
+      </div>
+      <button
+        type="submit"
+        class="bg-gray-800 text-white p-2 rounded-md hover:bg-cyan-500 w-full"
+      >
+        Send
+      </button>
+    </form>
+  </div>
 </section>
