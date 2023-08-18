@@ -1,0 +1,44 @@
+<section class="gap-4 my-8 w-96 mx-auto" id="contact">
+  <h2 class="text-2xl text-center mb-1">Contact</h2>
+  <p class="h-1 w-8 bg-white mx-auto"></p>
+  <form
+    method="POST"
+    action="https://formspree.io/f/mayzwolp"
+    class="space-y-3 mt-5"
+  >
+    <div class="grid">
+      <label for="name" class="text-gray-300">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required=""
+        class="text-white bg-gray-800 p-2 rounded-md"
+      />
+    </div>
+    <div class="grid">
+      <label for="email" class="text-gray-300">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required=""
+        class="text-white bg-gray-800 p-2 rounded-md"
+      />
+    </div>
+    <div class="grid">
+      <label for="message" class="text-gray-300">Message</label>
+      <textarea
+        name="message"
+        id="message"
+        required=""
+        class="text-white bg-gray-800 p-2 rounded-md"></textarea>
+    </div>
+    <button
+      type="submit"
+      class="bg-gray-800 text-white p-2 rounded-md hover:bg-gray-700 w-full"
+    >
+      Send
+    </button>
+  </form>
+</section>

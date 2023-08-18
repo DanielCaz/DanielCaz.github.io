@@ -1,3 +1,3 @@
-# DanielCaz.github.io
+# danielcaz.github.io
 
-Personal portfolio website developed with Astro.
+My personal website. Built with [Astro](https://astro.build/).
