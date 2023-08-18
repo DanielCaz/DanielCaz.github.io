@@ -1,0 +1,67 @@
+---
+import ProjectItem from "../items/ProjectItem.astro";
+
+import ImagePDMU from "../../assets/img/project_pdmu.png";
+import ImageSGCD from "../../assets/img/project_sgcd.png";
+
+export type ProjectItem = {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+  tags: string[];
+};
+
+const projects: ProjectItem[] = [
+  {
+    title: "SGCD",
+    description: "A website for odontologists to manage their patient info",
+    image: ImageSGCD,
+    url: "https://sgcd.vercel.app/",
+    tags: ["Next.js", "Bootstrap", "Firebase"],
+  },
+  {
+    title: "PDMU",
+    description:
+      "A website for my local 'pentatlón' to manage their members and uniform sales",
+    image: ImagePDMU,
+    url: "https://pdmu.vercel.app/",
+    tags: ["Next.js", "TailwindCSS", "MongoDB", "Auth0"],
+  },
+];
+---
+
+<section class="gap-4 my-8" id="projects">
+  <h2 class="text-2xl text-center mb-1">Projects</h2>
+  <p class="h-1 w-8 bg-white mx-auto"></p>
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 place-items-center gap-4 sm:col-span-2 mt-4"
+  >
+    {projects.map((project) => <ProjectItem project={project} />)}
+  </div>
+</section>
+<script>
+  const btnSGCD = document.querySelector(
+    "#btnProjectSGCD"
+  ) as HTMLButtonElement;
+  const btnPDMU = document.querySelector(
+    "#btnProjectPDMU"
+  ) as HTMLButtonElement;
+
+  const dialogSGCD = document.querySelector(
+    "#dialogProjectSGCD"
+  ) as HTMLDialogElement;
+  const dialogPDMU = document.querySelector(
+    "#dialogProjectPDMU"
+  ) as HTMLDialogElement;
+
+  btnSGCD.addEventListener("click", () => dialogSGCD.showModal());
+  btnPDMU.addEventListener("click", () => dialogPDMU.showModal());
+
+  dialogSGCD.addEventListener("click", (e) => {
+    if (e.target === dialogSGCD) dialogSGCD.close();
+  });
+  dialogPDMU.addEventListener("click", (e) => {
+    if (e.target === dialogPDMU) dialogPDMU.close();
+  });
+</script>

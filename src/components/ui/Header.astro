@@ -1,0 +1,33 @@
+---
+type NavItem = {
+  name: string;
+  href: string;
+};
+
+const navItems: NavItem[] = [
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+---
+
+<header class="flex items-center justify-between pt-4">
+  <a
+    href="/assets/pdf/resume.pdf"
+    download="JorgeDanielResume.pdf"
+    class="border-4 py-2 px-4 rounded-xl border-white hover:bg-cyan-500 transition-colors duration-300 ease-in-out"
+    >Download CV</a
+  >
+  <nav class="space-x-6">
+    {
+      navItems.map((navItem) => (
+        <a
+          href={navItem.href}
+          class="hover:text-cyan-400 transition-colors duration-300 ease-in-out"
+        >
+          {navItem.name}
+        </a>
+      ))
+    }
+  </nav>
+</header>
