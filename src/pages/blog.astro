@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+import BlogHeader from "../components/ui/BlogHeader.astro";
+import Layout from "../layouts/Layout.astro";
+import BlogPostItem from "../components/items/BlogPostItem.astro";
+
+const posts = await getCollection("blog");
+---
+
+<Layout>
+  <BlogHeader />
+  {posts.map((post) => <BlogPostItem post={post} />)}
+</Layout>

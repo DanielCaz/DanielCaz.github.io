@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const blogEntries = await getCollection("blog");
+
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+};
+
+const { entry } = Astro.props as { entry: CollectionEntry<"blog"> };
+const { Content } = await entry.render();
+---
+
+<Layout>
+  <a
+    href="/blog"
+    class="border-2 border-gray-300 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-lg mt-5 inline-block tranition duration-200 ease-in-out"
+  >
+    Back to blog
+  </a>
+  <main class="blog-content mb-5 rounded mt-5 max-w-2xl mx-auto">
+    <h1 class="mt-7 mb-4 text-center text-3xl font-bold">{entry.data.title}</h1>
+    <p>{entry.data.excerpt}</p>
+    <div class="mb-4">
+      <span>
+        {
+          entry.data.date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })
+        }
+      </span>
+      {
+        entry.data.tags.map((tag) => (
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ml-2">
+            #{tag}
+          </span>
+        ))
+      }
+    </div>
+    <figure>
+      <img src={entry.data.cover.image} alt={entry.data.title} />
+      <figcaption class="text-center text-sm text-gray-400 mt-2 mb-4">
+        Photo by {entry.data.cover.author} on <a
+          href={entry.data.cover.source}
+          target="_blank"
+          rel="noopener noreferrer">Pexels</a
+        >
+      </figcaption>
+    </figure>
+    <Content />
+  </main>
+</Layout>
+<style is:inline>
+  .blog-content h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content p {
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content a {
+    color: #3182ce;
+  }
+
+  .blog-content a:hover {
+    color: #2c5282;
+  }
+
+  .blog-content ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+
+  .blog-content ol {
+    list-style: decimal;
+    margin-left: 2rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+</style>

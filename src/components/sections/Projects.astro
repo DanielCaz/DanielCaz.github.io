@@ -41,27 +41,27 @@ const projects: ProjectItem[] = [
   </div>
 </section>
 <script>
-  const btnSGCD = document.querySelector(
-    "#btnProjectSGCD"
-  ) as HTMLButtonElement;
-  const btnPDMU = document.querySelector(
-    "#btnProjectPDMU"
-  ) as HTMLButtonElement;
+  const btns = document.querySelectorAll(
+    ".btnProject"
+  ) as NodeListOf<HTMLButtonElement>;
+  const dialogs = document.querySelectorAll(
+    "dialog"
+  ) as NodeListOf<HTMLDialogElement>;
 
-  const dialogSGCD = document.querySelector(
-    "#dialogProjectSGCD"
-  ) as HTMLDialogElement;
-  const dialogPDMU = document.querySelector(
-    "#dialogProjectPDMU"
-  ) as HTMLDialogElement;
-
-  btnSGCD.addEventListener("click", () => dialogSGCD.showModal());
-  btnPDMU.addEventListener("click", () => dialogPDMU.showModal());
-
-  dialogSGCD.addEventListener("click", (e) => {
-    if (e.target === dialogSGCD) dialogSGCD.close();
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const dialog = document.querySelector(
+        `#${btn.dataset.dialog}`
+      ) as HTMLDialogElement;
+      dialog.showModal();
+    });
   });
-  dialogPDMU.addEventListener("click", (e) => {
-    if (e.target === dialogPDMU) dialogPDMU.close();
+
+  dialogs.forEach((dialog) => {
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
   });
 </script>

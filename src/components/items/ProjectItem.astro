@@ -4,43 +4,41 @@ import type { ProjectItem } from "../sections/Projects.astro";
 const { project } = Astro.props as { project: ProjectItem };
 ---
 
-<>
-  <div
-    class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg shadow-lg"
-  >
-    <button id={`btnProject${project.title}`}>
-      <img
-        class="w-32 h-32 rounded-full hover:opacity-80"
-        src={project.image}
-        alt={project.title}
-      />
-    </button>
-    <h3 class="text-lg font-semibold">{project.title}</h3>
-    <p class="text-center">{project.description}</p>
-    <div class="flex gap-2 flex-wrap">
-      {
-        project.tags.map((tag) => (
-          <span class="px-2 py-1 bg-slate-800 rounded-full text-white text-xs">
-            {tag}
-          </span>
-        ))
-      }
-    </div>
+<div
+  class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg shadow-lg"
+>
+  <button class="btnProject" data-dialog={project.title}>
+    <img
+      class="w-32 h-32 rounded-full hover:opacity-80"
+      src={project.image}
+      alt={project.title}
+    />
+  </button>
+  <h3 class="text-lg font-semibold">{project.title}</h3>
+  <p class="text-center">{project.description}</p>
+  <div class="flex gap-2 flex-wrap">
+    {
+      project.tags.map((tag) => (
+        <span class="px-2 py-1 bg-slate-800 rounded-full text-white text-xs">
+          {tag}
+        </span>
+      ))
+    }
   </div>
-  <dialog
-    id={`dialogProject${project.title}`}
-    class="p-3 rounded backdrop:bg-black backdrop:opacity-40 w-3/4 bg-slate-800 text-white"
+</div>
+<dialog
+  id={project.title}
+  class="dialogProject p-3 rounded backdrop:bg-black backdrop:opacity-40 w-3/4 bg-slate-800 text-white"
+>
+  <img class="mx-auto rounded-xl" src={project.image} alt={project.title} />
+  <h3 class="text-lg font-semibold my-1">{project.title}</h3>
+  <p class="text-justify">{project.description}</p>
+  <a
+    class="text-center text-blue-500 hover:underline"
+    href={project.url}
+    target="_blank"
+    rel="noopener noreferrer"
   >
-    <img class="mx-auto rounded-xl" src={project.image} alt={project.title} />
-    <h3 class="text-lg font-semibold my-1">{project.title}</h3>
-    <p class="text-justify">{project.description}</p>
-    <a
-      class="text-center text-blue-500 hover:underline"
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {project.url}
-    </a>
-  </dialog>
-</>
+    {project.url}
+  </a>
+</dialog>
