@@ -23,7 +23,9 @@ const { Content } = await entry.render();
   >
     Back to blog
   </a>
-  <main class="blog-content mb-5 rounded mt-5 max-w-2xl mx-auto">
+  <main
+    class="blog-content mb-5 rounded mt-5 max-w-2xl mx-auto bg-slate-900 text-slate-300 px-6 pt-1 pb-3"
+  >
     <h1 class="mt-7 mb-4 text-center text-3xl font-bold">{entry.data.title}</h1>
     <p>{entry.data.excerpt}</p>
     <div class="mb-4">
@@ -63,6 +65,7 @@ const { Content } = await entry.render();
     line-height: 2rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    font-weight: 600;
   }
 
   .blog-content p {
@@ -91,5 +94,10 @@ const { Content } = await entry.render();
 
   .blog-content li {
     margin-bottom: 0.5rem;
+  }
+
+  .blog-content pre {
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
 </style>
