@@ -3,6 +3,7 @@ import ProjectItem from "../items/ProjectItem.astro";
 
 import ImagePDMU from "../../assets/img/project_pdmu.png";
 import ImageSGCD from "../../assets/img/project_sgcd.png";
+import ImagePokedex from "../../assets/img/project_pokedex.png";
 
 export type ProjectItem = {
   title: string;
@@ -27,6 +28,14 @@ const projects: ProjectItem[] = [
     image: ImagePDMU,
     url: "https://pdmu.vercel.app/",
     tags: ["Next.js", "TailwindCSS", "MongoDB", "Auth0"],
+  },
+  {
+    title: "Pokedex",
+    description:
+      "A simple pokedex that uses PokeAPI for data and Next JS for the front-end. It's also made purely with server components and server actions.",
+    image: ImagePokedex,
+    url: "https://pokemondb.vercel.app/",
+    tags: ["Next.js", "TailwindCSS"],
   },
 ];
 ---
