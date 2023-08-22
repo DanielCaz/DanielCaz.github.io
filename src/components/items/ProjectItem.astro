@@ -29,13 +29,15 @@ const { project } = Astro.props as { project: ProjectItem };
 </div>
 <dialog
   id={project.title}
-  class="dialogProject p-3 rounded backdrop:bg-black backdrop:opacity-40 w-3/4 bg-slate-800 text-white"
+  class="dialogProject p-3 rounded backdrop:bg-black backdrop:opacity-40 w-3/4 bg-slate-800 text-white max-w-2xl"
 >
   <img
-    class="mx-auto rounded-xl"
+    class="mx-auto rounded-xl max-w-lg"
     src={project.image}
     alt={project.title}
     loading="lazy"
+    width="100%"
+    height="auto"
   />
   <h3 class="text-lg font-semibold my-1">{project.title}</h3>
   <p class="text-justify">{project.description}</p>
