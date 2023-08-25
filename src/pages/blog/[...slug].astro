@@ -50,17 +50,13 @@ const { Content } = await entry.render();
       </div>
     </header>
     <p class="mb-2">{entry.data.excerpt}</p>
-    <figure>
-      <img src={entry.data.cover.image} alt={entry.data.title} />
-      <figcaption class="text-center text-sm text-gray-400 mt-2 mb-4">
-        Photo by {entry.data.cover.author} on <a
-          class="underline hover:text-gray-500"
-          href={entry.data.cover.source}
-          target="_blank"
-          rel="noopener noreferrer">Pexels</a
-        >
-      </figcaption>
-    </figure>
+    <img
+      src={`${import.meta.env.ASSETS_URL}/assets/blog/${
+        entry.data.cover.image
+      }`}
+      alt={entry.data.title}
+      class="mb-2 rounded-lg mx-auto"
+    />
     <main class="blog-content">
       <Content />
     </main>
@@ -76,7 +72,6 @@ const { Content } = await entry.render();
   }
 
   .blog-content p {
-    font-size: 1.125rem;
     line-height: 1.8rem;
     margin-bottom: 1rem;
   }

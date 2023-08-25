@@ -5,16 +5,18 @@ const { post } = Astro.props as { post: CollectionEntry<"blog"> };
 ---
 
 <a
-  href={post.slug}
+  href={`/blog/${post.slug}`}
   class="bg-gray-900 p-3 mb-5 rounded shadow-gray-700 shadow group transition-all duration-300 ease-in-out hover:scale-[1.01] flex flex-col sm:flex-row items-center gap-4"
 >
   <img
-    src={post.data.cover.thumbnail}
+    src={`${import.meta.env.ASSETS_URL}/assets/blog/${
+      post.data.cover.thumbnail
+    }`}
     alt={post.data.title}
-    class="rounded sm:w-32 sm:h-32 w-full h-auto object-cover"
+    class="rounded sm:w-32 sm:h-32 object-cover w-full h-80 object-center sm:order-last"
     loading="lazy"
   />
-  <div>
+  <div class="w-full">
     <p class="mb-2">{post.data.date.toLocaleDateString()}</p>
     <h2 class="text-xl font-semibold">
       {post.data.title}

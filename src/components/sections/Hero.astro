@@ -1,5 +1,4 @@
 ---
-import HeroImage from "../../assets/img/hero.svg";
 import "@fontsource/poppins";
 ---
 
@@ -13,6 +12,10 @@ import "@fontsource/poppins";
     </p>
   </div>
   <div>
-    <img src={HeroImage} alt="About" title="Image by Freepik" />
+    <img
+      src={`${import.meta.env.ASSETS_URL}/assets/img/hero.svg`}
+      alt="About"
+      title="Image by Freepik"
+    />
   </div>
 </section>

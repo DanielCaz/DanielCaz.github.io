@@ -10,8 +10,6 @@ const blogCollection = defineCollection({
     cover: z.object({
       image: z.string(),
       thumbnail: z.string(),
-      author: z.string(),
-      source: z.string(),
     }),
   }),
 });

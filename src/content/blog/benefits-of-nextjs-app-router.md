@@ -4,10 +4,8 @@ excerpt: The new Next.JS app router brings a lot of benefits for your projects. 
 date: 2023-08-19
 tags: [nextjs, webdev]
 cover:
-  image: /blog/benefits-of-nextjs-app-router/cover.jpg
-  thumbnail: /blog/benefits-of-nextjs-app-router/cover_thumb.jpg
-  author: Luis Gomes
-  source: https://www.pexels.com/photo/close-up-photo-of-programming-of-codes-546819/
+  image: benefits-of-nextjs-app-router/cover.jpg
+  thumbnail: benefits-of-nextjs-app-router/cover_thumb.jpg
 ---
 
 Next.JS 13 is out and with it comes a new app router and it brings features like react server components, special files like `loading.tsx` and the new Metadata API. But what are the benefits of all these new features? Let's find out!
