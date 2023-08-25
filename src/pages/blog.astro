@@ -7,7 +7,7 @@ import BlogPostItem from "../components/items/BlogPostItem.astro";
 const posts = await getCollection("blog");
 ---
 
-<Layout>
+<Layout usesVT={true}>
   <BlogHeader />
   {posts.map((post) => <BlogPostItem post={post} />)}
 </Layout>

@@ -1,5 +1,8 @@
 ---
 import "@fontsource-variable/jetbrains-mono";
+import { ViewTransitions } from "astro:transitions";
+
+const { usesVT } = Astro.props as { usesVT?: boolean };
 ---
 
 <!DOCTYPE html>
@@ -8,7 +11,6 @@ import "@fontsource-variable/jetbrains-mono";
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="generator" content={Astro.generator} />
     <title>DanielCaz Portfolio</title>
     <meta
@@ -31,6 +33,7 @@ import "@fontsource-variable/jetbrains-mono";
     <meta property="og:image:height" content="627" />
     <meta property="og:type" content="website" />
     <meta property="image" content="https://danielcaz.me/logo-og.png" />
+    {usesVT ? <ViewTransitions fallback="swap" /> : null}
   </head>
   <body class="mx-auto max-w-screen-xl px-5 bg-black text-white relative">
     <slot />
