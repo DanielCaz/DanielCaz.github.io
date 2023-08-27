@@ -1,6 +1,10 @@
 ---
 import ProjectItem from "../items/ProjectItem.astro";
 
+import imageSGCD from "../../assets/img/project_sgcd.png";
+import imagePDMU from "../../assets/img/project_pdmu.png";
+import imagePokedex from "../../assets/img/project_pokedex.png";
+
 export type ProjectItem = {
   title: string;
   description: string;
@@ -13,7 +17,7 @@ const projects: ProjectItem[] = [
   {
     title: "SGCD",
     description: "A website for odontologists to manage their patient info",
-    image: `${import.meta.env.ASSETS_URL}/assets/img/project_sgcd.png`,
+    image: imageSGCD,
     url: "https://sgcd.vercel.app/",
     tags: ["Next.js", "Bootstrap", "Firebase"],
   },
@@ -21,7 +25,7 @@ const projects: ProjectItem[] = [
     title: "PDMU",
     description:
       "A website for my local 'pentatlón' to manage their members and uniform sales",
-    image: `${import.meta.env.ASSETS_URL}/assets/img/project_pdmu.png`,
+    image: imagePDMU,
     url: "https://pdmu.vercel.app/",
     tags: ["Next.js", "TailwindCSS", "MongoDB", "Auth0"],
   },
@@ -29,7 +33,7 @@ const projects: ProjectItem[] = [
     title: "Pokedex",
     description:
       "A simple pokedex that uses PokeAPI for data and Next JS for the front-end. It's also made purely with server components and server actions.",
-    image: `${import.meta.env.ASSETS_URL}/assets/img/project_pokedex.png`,
+    image: imagePokedex,
     url: "https://pokemondb.vercel.app/",
     tags: ["Next.js", "TailwindCSS"],
   },

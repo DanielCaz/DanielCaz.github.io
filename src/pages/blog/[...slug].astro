@@ -16,7 +16,7 @@ const { entry } = Astro.props as { entry: CollectionEntry<"blog"> };
 const { Content } = await entry.render();
 ---
 
-<Layout usesVT={true}>
+<Layout>
   <a
     href="/blog"
     class="border-2 border-gray-300 hover:bg-cyan-500 text-white font-bold py-2 px-4 rounded-lg mt-5 inline-block tranition duration-200 ease-in-out"
@@ -51,10 +51,7 @@ const { Content } = await entry.render();
     </header>
     <p class="mb-2">{entry.data.excerpt}</p>
     <img
-      transition:name="blog-post-cover"
-      src={`${import.meta.env.ASSETS_URL}/assets/blog/${
-        entry.data.cover.image
-      }`}
+      src={`/blog/${entry.slug}/cover.jpg`}
       alt={entry.data.title}
       class="mb-2 rounded-lg mx-auto"
     />

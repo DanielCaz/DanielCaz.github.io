@@ -1,8 +1,5 @@
 ---
 import "@fontsource-variable/jetbrains-mono";
-import { ViewTransitions } from "astro:transitions";
-
-const { usesVT } = Astro.props as { usesVT?: boolean };
 ---
 
 <!DOCTYPE html>
@@ -33,7 +30,6 @@ const { usesVT } = Astro.props as { usesVT?: boolean };
     <meta property="og:image:height" content="627" />
     <meta property="og:type" content="website" />
     <meta property="image" content="https://danielcaz.me/logo-og.png" />
-    {usesVT ? <ViewTransitions fallback="swap" /> : null}
   </head>
   <body class="mx-auto max-w-screen-xl px-5 bg-black text-white relative">
     <slot />

@@ -26,7 +26,6 @@ concurrency:
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
-  ASSETS_URL: ${{ secrets.ASSETS_URL }}
 
 jobs:
   build:

@@ -12,7 +12,6 @@ const { project } = Astro.props as { project: ProjectItem };
       class="w-32 h-32 rounded-full hover:opacity-80"
       src={project.image}
       alt={project.title}
-      loading="lazy"
     />
   </button>
   <h3 class="text-lg font-semibold">{project.title}</h3>
@@ -35,7 +34,6 @@ const { project } = Astro.props as { project: ProjectItem };
     class="mx-auto rounded-xl max-w-lg"
     src={project.image}
     alt={project.title}
-    loading="lazy"
     width="100%"
     height="auto"
   />
