@@ -1,6 +1,7 @@
 ---
 import "@fontsource/poppins";
 import heroSVG from "../../assets/img/hero.svg";
+import { Image } from "astro:assets";
 ---
 
 <section class="grid sm:grid-cols-2 gap-4 my-8">
@@ -13,6 +14,6 @@ import heroSVG from "../../assets/img/hero.svg";
     </p>
   </div>
   <div>
-    <img src={heroSVG} alt="About" title="Image by Freepik" />
+    <Image src={heroSVG} alt="About" title="Image by Freepik" />
   </div>
 </section>

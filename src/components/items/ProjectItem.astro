@@ -1,5 +1,6 @@
 ---
 import type { ProjectItem } from "../sections/Projects.astro";
+import { Image } from "astro:assets";
 
 const { project } = Astro.props as { project: ProjectItem };
 ---
@@ -8,10 +9,12 @@ const { project } = Astro.props as { project: ProjectItem };
   class="flex flex-col items-center justify-center gap-2 p-4 rounded-lg shadow-lg"
 >
   <button class="btnProject" data-dialog={project.title}>
-    <img
+    <Image
       class="w-32 h-32 rounded-full hover:opacity-80"
       src={project.image}
       alt={project.title}
+      width={128}
+      height={128}
     />
   </button>
   <h3 class="text-lg font-semibold">{project.title}</h3>
@@ -30,12 +33,12 @@ const { project } = Astro.props as { project: ProjectItem };
   id={project.title}
   class="dialogProject p-3 rounded backdrop:bg-black backdrop:opacity-40 w-3/4 bg-slate-800 text-white max-w-2xl"
 >
-  <img
+  <Image
     class="mx-auto rounded-xl max-w-lg"
     src={project.image}
     alt={project.title}
-    width="100%"
-    height="auto"
+    width={256}
+    height={256}
   />
   <h3 class="text-lg font-semibold my-1">{project.title}</h3>
   <p class="text-justify">{project.description}</p>

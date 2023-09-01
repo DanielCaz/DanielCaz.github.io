@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 export const getStaticPaths = async () => {
   const blogEntries = await getCollection("blog");
@@ -50,10 +51,12 @@ const { Content } = await entry.render();
       </div>
     </header>
     <p class="mb-2">{entry.data.excerpt}</p>
-    <img
+    <Image
       src={`/blog/${entry.slug}/cover.jpg`}
       alt={entry.data.title}
       class="mb-2 rounded-lg mx-auto"
+      width={800}
+      height={400}
     />
     <main class="blog-content">
       <Content />
